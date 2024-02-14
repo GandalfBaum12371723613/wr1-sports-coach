@@ -1,3 +1,3 @@
 # wr1-sports-coach
 
-URL: [https://achim-tack.de/projects/wr1_sport_coach/index.html](https://achim-tack.de/projects/WR1SportsCoachV2/index.html)
+URL:(https://gandalfbaum12371723613.github.io/wr1-sports-coach/)https://gandalfbaum12371723613.github.io/wr1-sports-coach/)
