@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WR1 Sports Coach</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+    <!-- App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/logo.png">
+    <link rel="shortcut icon" href="assets/logo.png">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #39ff14; color: #000;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="color: #000; font-family: 'Orbitron', sans-serif;" onclick="showScreen('home')">WR1 Sports Coach</a>
+        <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="homeLink" onclick="showScreen('home')" style="color: #000;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="aboutLink" onclick="showScreen('about')" style="color: #000;">Info</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="home" class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <img src="assets/logo.png" alt="Logo" class="img-fluid">
+    </div>
+    <h2 class="text-center">Schulsport, <br>der nicht peinlich ist!</h2>
+    <br>
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-neon-green" style="width: 200px; height: 100px; margin-right: 10px;" onclick="showScreen('Login')">Anmelden</button>
+    </div>
+</div>
+
+<div id="Login" class="container mt-5" style="display: none;">
+    <h2>Login</h2>
+    <form>
+        <div class="mb-3">
+            <label for="schulerUsername" class="form-label">Username</label>
+            <input type="text" class="form-control" id="schulerUsername" required>
+        </div>
+        <div class="mb-3">
+            <label for="schulerPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="schulerPassword" required>
+        </div>
+        <button type="button" class="btn btn-neon-green" onclick="showScreen('schulerHome')">Login</button>
+    </form>
+</div>
+
+<div id="schulerHome" class="container mt-5" style="display: none;">
+    <h2>Willkommen zu deiner Übungsübersicht!</h2>
+    <p>Hier kannst du sehen, welche Übungen du bereits geschafft hast, und welche du noch probieren solltest.</p>
+    <br>
+    <h3>Noch offen</h3>
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise1')">Flugrolle</button>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise2')">Handstand</button>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise3')">Radschlag</button>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise4')">Handstandrolle</button>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise5')">Rolle vorwärts in den Handstand</button>
+    </div>
+    <br>
+    <h3>Bereits geschafft</h3>
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise4')">Handstandabrolle</button>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise5')">Rolle vorwärts in den Handstand</button>
+    </div>
+</div>
+
+<div id="lehrerHome" class="container mt-5" style="display: none;">
+    <h2>Willkommen!</h2>
+    <p>Bitte wählen Sie den Namen eines Schülers aus:</p>
+    <br>
+    <br>
+    <select id="studentSelect" class="form-select">
+        <option selected>Wählen Sie einen Schüler</option>
+        <option value="1">Constantin</option>
+        <option value="2">Nele</option>
+        <option value="3">Carl Johann</option>
+        <option value="4">Killian</option>
+        <option value="5">Phillip</option>
+    </select>
+    <br>
+    <br>
+    <button type="button" class="btn btn-neon-green" onclick="showScreen('studentInfo')">Leistungsfortschritt anzeigen</button>
+</div>
+
+<div id="studentInfo" class="container mt-5" style="display: none;">
+    <h2>Leistungsfortschritt des Schülers</h2>
+    <p>Hier können Sie sehen, welche Übungen der Schüler bereits geschafft hat und welche noch offen sind.</p>
+    <br>
+    <h3>Noch offen</h3>
+    <ul>
+        <li>Handstand</li>
+        <li>Rad</li>
+        <li>Seilspringen</li>
+    </ul>
+    <br>
+    <h3>Bereits geschafft</h3>
+    <ul>
+        <li>Sprung unter das Pferd</li>
+        <li>Balken</li>
+    </ul>
+    <button type="button" class="btn btn-neon-green" onclick="showScreen('lehrerHome')">Zurück zur Schülerauswahl</button>
+</div>
+
+<div id="exercise1" class="container mt-5" style="display: none;">
+    <h2>Flugrolle</h2>
+    <p>Die Flugrolle ist eine wichtige Übung im Turnen. Hier sind die Schritte, um sie zu meistern:</p>
+    <ul>
+        <li>Stelle dich gerade hin und strecke deine Arme über deinen Kopf.</li>
+        <li>Beuge deine Knie und rolle vorwärts, indem du deine Hände auf den Boden legst.</li>
+        <li>Halte deinen Körper eng zusammen und rolle über deinen Rücken.</li>
+        <li>Komm wieder auf deinen Füßen zum Stehen und strecke deine Arme über deinen Kopf.</li>
+    </ul>
+
+    <video width="100%" height="auto" controls loop>
+        <source src="assets/videos/exercise1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <button type="button" class="btn btn-neon-green" onclick="showScreen('exerciseCapture')">Ausprobieren</button>
+    <br>
+    <br>
+</div>
+
+<div id="exercise2" class="container mt-5" style="display: none;">
+    <h2>Handstand</h2>
+    <p>Der Handstand ist eine grundlegende Übung im Turnen. So schaffst auch du ihn:</p>
+    <ul>
+        <li>Stelle dich gerade hin und strecke deine Arme über deinen Kopf.</li>
+        <li>Lehne dich nach vorne und platziere deine Hände auf dem Boden.</li>
+        <li>Schwinge ein Bein nach oben und folge mit dem anderen Bein, bis beide Beine in der Luft sind.</li>
+        <li>Halte deinen Körper gerade und balanciere dich aus.</li>
+    </ul>
+
+    <video width="100%" height="auto" controls loop>
+        <source src="assets/videos/exercise2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <button type="button" class="btn btn-neon-green" onclick="showScreen('exerciseCapture')">Ausprobieren</button>
+    <br>
+    <br>
+</div>
+
+<div id="exercise3" class="container mt-5" style="display: none;">
+    <h2>Radschlag</h2>
+    <p>Der Radschlag ist eine essentielle Fertigkeit im Turnen. Hier ist, wie du es schaffst:</p>
+    <ul>
+        <li>Positioniere dich aufrecht und hebe deine Arme über deinen Kopf.</li>
+        <li>Neige dich zur Seite und setze eine Hand auf den Boden, gefolgt von der anderen Hand.</li>
+        <li>Swinge ein Bein über deinen Körper und folge mit dem anderen Bein, bis du wieder auf deinen Füßen bist.</li>
+        <li>Halte deinen Körper straff und halte das Gleichgewicht.</li>
+    </ul>
+
+    <video width="100%" height="auto" controls loop>
+        <source src="assets/videos/exercise3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <button type="button" class="btn btn-neon-green" onclick="showScreen('exerciseCapture')">Ausprobieren</button>
+    <br>
+    <br>
+</div>
+
+<div id="exercise4" class="container mt-5" style="display: none;">
+    <h2>Handstandabrolle</h2>
+    <p>Seilspringen ist eine grundlegende Übung im Turnen. So schaffst auch du es:</p>
+    <ul>
+        <li>Stell dich hin und strecke dein Bein aus.</li>
+        <li>Geh nach vorne auf die Hände.</li>
+        <li>Zieh dein anderes Bein nach oben.</li>
+        <li>Ziehe dein erstes Bein hinterher.</li>
+        <li>Komm in die Balance.</li>
+        <li>Leg dein Kinn auf deine Brust und roll dich ab.</li>
+    </ul>
+
+    <video width="100%" height="auto" controls loop>
+        <source src="assets/videos/exercise4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <button type="button" class="btn btn-neon-green" onclick="showScreen('exerciseCapture')">Ausprobieren</button>
+    <br>
+    <br>
+</div>
+
+<div id="exercise5" class="container mt-5" style="display: none;">
+    <h2>Rolle vorwärst in Handstand</h2>
+    <p>Diese Übung ist etwas schwieriger. So schaffst auch du sie:</p>
+    <ul>
+        <li>Stelle dich gerade hin und beginne die Vorwärtsrolle.</li>
+        <li>Drück dich mit deinem Bein vom Boden ab und stütz dich auf deine Hände.</li>
+        <li>Drück dich mit den Füßen vom Boden ab und komm in den Handstand.</li>
+    </ul>
+
+    <video width="100%" height="auto" controls loop>
+        <source src="assets/videos/exercise5 .mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <button type="button" class="btn btn-neon-green" onclick="showScreen('exerciseCapture')">Ausprobieren</button>
+    <br>
+    <br>
+    <video width="100%" height="auto" controls loop>
+        <source src="assets/videos/exercise3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <button type="button" class="btn btn-neon-green" onclick="showScreen('exerciseCapture')">Ausprobieren</button>
+    <br>
+    <br>
+</div>
+
+<div id="exerciseCapture" class="container mt-5" style="display: none;">
+    <h2>Übungserfassung</h2>
+    <p>Stelle dich vor die Kamera, klicke "Start" und beginne mit deiner Übung nach dem Countdown. Unsere KI wird deine Bewegungen analysieren und dir Feedback geben.</p>
+    <br>
+    <video id="webcam" autoplay playsinline width="640" height="480" style="display: none;"></video>
+    <canvas id="output" width="640" height="480"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+    <script src="script.js"></script>
+    <br>
+    <br>
+    <button type="button" class="btn btn-neon-green" onclick="startCapture()">Start</button>
+    <button type="button" class="btn btn-neon-green" onclick="stopCapture()">Stop</button>
+    <br>
+    <br>
+</div>
+
+<div id="exercise_result" class="container mt-5" style="display: none;">
+    <h2>Gut gemacht!</h2>
+    <p>
+        Hier sind einige Tipps, um deinen Handstand zu verbessern:
+    </p>
+    <ul>
+        <li>Stelle sicher, dass deine Hände direkt unter deinen Schultern sind.</li>
+        <li>Halte deinen Körper gerade und angespannt, wie eine Linie.</li>
+        <li>Übe das Balancieren mit Hilfe einer Wand, bevor du es ohne versuchst.</li>
+        <li>Atme ruhig und gleichmäßig, um deine Konzentration zu behalten.</li>
+        <li>Übe regelmäßig, um deine Kraft und Balance zu verbessern.</li>
+    </ul>
+    <p>
+        Denke daran, dass jeder Fortschritt ein Erfolg ist. Bleib dran und du wirst deinen Handstand verbessern!
+    </p>
+    <button type="button" class="btn btn-neon-green" onclick="showScreen('schulerHome')">Zurück zur Startseite</button>
+</div>
+
+<div id="about" class="container mt-5" style="display: none;">
+    <h2>Über Uns</h2>
+    <p>
+        Unsere Web-App wurde entwickelt, um Schülern und Lehrern zu helfen, den Sportunterricht unterhaltsamer, weniger stressig und vor allem weniger peinlich zu gestalten. Wie machen wir das? Durch die Integration von künstlicher Intelligenz in den Prozess!
+    </p>
+    <p>
+        Unser Hauptziel ist es, eine positive und angenehme Lernumgebung zu schaffen, in der jeder Schüler seine Fähigkeiten und Fertigkeiten verbessern kann, ohne sich unwohl zu fühlen. Wir glauben, dass Technologie eine Schlüsselrolle dabei spielen kann, diese Vision Wirklichkeit werden zu lassen.
+    </p>
+    <p>
+        Darüber hinaus legen wir großen Wert auf den Datenschutz. Unsere Web-App entspricht den Datenschutzbestimmungen, sodass Sie sicher sein können, dass Ihre Daten sicher und geschützt sind.
+    </p>
+</div>
+
+<script>
+    function showScreen(screenId) {
+        var screens = ['home', 'schulerLogin', 'lehrerLogin', 'schulerHome', 
+                        'exercise1', 'exercise2', 'exercise3', 'exercise4', 'exercise5',
+                        'exerciseCapture', 'exercise_result',
+                        'lehrerHome', 'studentInfo', 'about'];
+        screens.forEach(function(screen) {
+            var element = document.getElementById(screen);
+            if(element) {
+                element.style.display = screen === screenId ? 'block' : 'none';
+            }
+        });
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
