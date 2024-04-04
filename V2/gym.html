@@ -31,7 +31,10 @@
                     <a class="nav-link" href="#" id="homeLink" onclick="showScreen('home')" style="color: #000;">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="aboutLink" onclick="showScreen('about')" style="color: #000;">Info</a>
+                    <a class="nav-link" href="#" id="aboutLink" onclick="showScreen('Info')" style="color: #000;">Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="aboutLink" onclick="showScreen('about')" style="color: #000;">About</a>
                 </li>
             </ul>
         </div>
@@ -42,8 +45,8 @@
     <div class="d-flex justify-content-center">
         <img src="assets/logo.png" alt="Logo" class="img-fluid">
     </div>
-    <h2 class="text-center">Schulsport, <br>der nicht peinlich ist!</h2>
-    <br>
+    <h2 class="text-center">Sport <br>einfach richtig!</h2>
+    <br>x
     <div class="d-flex justify-content-center">
         <button type="button" class="btn btn-neon-green" style="width: 200px; height: 100px; margin-right: 10px;" onclick="showScreen('Login')">Anmelden</button>
     </div>
@@ -60,61 +63,40 @@
             <label for="schulerPassword" class="form-label">Password</label>
             <input type="password" class="form-control" id="schulerPassword" required>
         </div>
-        <button type="button" class="btn btn-neon-green" onclick="showScreen('schulerHome')">Login</button>
+        <button type="button" class="btn btn-neon-green" onclick="showScreen('Home')">Login</button>
     </form>
 </div>
 
-<div id="schulerHome" class="container mt-5" style="display: none;">
+<div id="Home" class="container mt-5" style="display: none;">
     <h2>Willkommen zu deiner Übungsübersicht!</h2>
     <p>Hier kannst du sehen, welche Übungen du bereits geschafft hast, und welche du noch probieren solltest.</p>
     <br>
     <h3>Noch offen</h3>
     <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise1')">Flugrolle</button>
+        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise1')">1</button>
     </div>
     <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise2')">Handstand</button>
+        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise2')">2</button>
     </div>
     <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise3')">Radschlag</button>
+        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise3')">3</button>
     </div>
     <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise4')">Handstandrolle</button>
-    </div>
-    <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise5')">Rolle vorwärts in den Handstand</button>
+        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise4')">4</button>
     </div>
     <br>
     <h3>Bereits geschafft</h3>
     <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise4')">Handstandabrolle</button>
+        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise4')">5</button>
     </div>
     <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise5')">Rolle vorwärts in den Handstand</button>
+        <button type="button" class="btn btn-neon-green m-2" style="width: 100%;" onclick="showScreen('exercise5')">6</button>
     </div>
 </div>
 
-<div id="lehrerHome" class="container mt-5" style="display: none;">
-    <h2>Willkommen!</h2>
-    <p>Bitte wählen Sie den Namen eines Schülers aus:</p>
-    <br>
-    <br>
-    <select id="studentSelect" class="form-select">
-        <option selected>Wählen Sie einen Schüler</option>
-        <option value="1">Constantin</option>
-        <option value="2">Nele</option>
-        <option value="3">Carl Johann</option>
-        <option value="4">Killian</option>
-        <option value="5">Phillip</option>
-    </select>
-    <br>
-    <br>
-    <button type="button" class="btn btn-neon-green" onclick="showScreen('studentInfo')">Leistungsfortschritt anzeigen</button>
-</div>
-
-<div id="studentInfo" class="container mt-5" style="display: none;">
-    <h2>Leistungsfortschritt des Schülers</h2>
-    <p>Hier können Sie sehen, welche Übungen der Schüler bereits geschafft hat und welche noch offen sind.</p>
+<div id="Info" class="container mt-5" style="display: none;">
+    <h2>Leistungsfortschritt</h2>
+    <p>Hier können Sie sehen, welche Übungen sie bereits geschafft habend und welche noch offen sind.</p>
     <br>
     <h3>Noch offen</h3>
     <ul>
@@ -128,7 +110,7 @@
         <li>Sprung unter das Pferd</li>
         <li>Balken</li>
     </ul>
-    <button type="button" class="btn btn-neon-green" onclick="showScreen('lehrerHome')">Zurück zur Schülerauswahl</button>
+    <button type="button" class="btn btn-neon-green" onclick="showScreen('Home')">Zurück zur Startseite</button>
 </div>
 
 <div id="exercise1" class="container mt-5" style="display: none;">
@@ -273,7 +255,7 @@
     <p>
         Denke daran, dass jeder Fortschritt ein Erfolg ist. Bleib dran und du wirst deinen Handstand verbessern!
     </p>
-    <button type="button" class="btn btn-neon-green" onclick="showScreen('schulerHome')">Zurück zur Startseite</button>
+    <button type="button" class="btn btn-neon-green" onclick="showScreen('Home')">Zurück zur Startseite</button>
 </div>
 
 <div id="about" class="container mt-5" style="display: none;">
@@ -291,10 +273,9 @@
 
 <script>
     function showScreen(screenId) {
-        var screens = ['home', 'schulerLogin', 'lehrerLogin', 'schulerHome', 
+        var screens = ['home', 'Login', 'Home', 
                         'exercise1', 'exercise2', 'exercise3', 'exercise4', 'exercise5',
-                        'exerciseCapture', 'exercise_result',
-                        'lehrerHome', 'studentInfo', 'about'];
+                        'exerciseCapture', 'exercise_result', 'Info', 'about'];
         screens.forEach(function(screen) {
             var element = document.getElementById(screen);
             if(element) {
